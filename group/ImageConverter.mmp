@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2008-2010 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+ *    
+ *       CYBERTEC
+ */
+
+TARGET          imageconverter.exe
+TARGETTYPE      exe
+UID             0x100039CE 0xE01F5467 
+SECUREID        0xE01F5467
+
+EPOCSTACKSIZE   0x9000
+
+CAPABILITY      ReadUserData WriteUserData
+
+// Macro for enabling Touch UI support in S60 5th Edition. 
+// Comment when compiling for S60 3rd Edition.
+MACRO __TUI_SUPPORTED__
+#define __TUI_SUPPORTED__
+
+SOURCEPATH      ../src
+SOURCE          ImageConverterApp.cpp 
+SOURCE          ImageConverterAppUi.cpp
+SOURCE          ImageConverterDocument.cpp
+SOURCE          ImageConverterContainer.cpp
+SOURCE          ImageConverterEngine.cpp
+SOURCE          EncoderSelectionDialog.cpp
+SOURCE          ShowInfoDialog.cpp
+
+SOURCEPATH      ../data
+START RESOURCE ImageConverter.rss
+	HEADER
+	TARGETPATH /resource/apps
+	LANG 01 16 63 SC
+END
+
+START RESOURCE  ImageConverter_reg.rss
+TARGETPATH      /private/10003a3f/apps
+END // RESOURCE
+
+USERINCLUDE     . 
+USERINCLUDE     ../inc
+USERINCLUDE    ../help
+
+SYSTEMINCLUDE 	/epoc32/include
+SYSTEMINCLUDE 	/epoc32/include/mw
+SYSTEMINCLUDE 	/epoc32/include/uiklafgt
+SYSTEMINCLUDE 	/epoc32/include/platform
+SYSTEMINCLUDE 	/epoc32/include/platform/mw
+
+LIBRARY         euser.lib apparc.lib cone.lib eikcore.lib 
+LIBRARY         eikcoctl.lib avkon.lib
+LIBRARY         CommonDialogs.lib
+LIBRARY         efsrv.lib imageconversion.lib fbscli.lib 
+LIBRARY         eikdlg.lib bafl.lib bitmaptransforms.lib
+LIBRARY         AknNotify.lib eiksrv.lib
+LIBRARY         ws32.lib
+LIBRARY         bitgdi.lib
+LIBRARY         gdi.lib
+LIBRARY         platformenv.lib
+LIBRARY         hlplch.lib
+LIBRARY         eikctl.lib 
+LIBRARY aknskins.lib sensrvclient.lib
+
+#ifdef __TUI_SUPPORTED__
+LIBRARY         touchfeedback.lib
+#endif
+
+

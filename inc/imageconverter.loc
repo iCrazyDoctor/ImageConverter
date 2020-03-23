@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2008-2010 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+ *    ============== CYBERTEC ===============
+ */
+
+#define qtn_appl_test "Test"
+
+#define qtn_appl_open "Open image"
+#define qtn_appl_saveas "Save as"
+#define qtn_appl_info "Info / Details"
+#define qtn_appl_rotate "Rotate"
+#define qtn_appl_scale "Scale"
+// avkon.loc file does not exist in S60 2nd Edition FP2 and newer, so we define this manually here
+#define qtn_options_exit "Exit"  
+#define qtn_rotate "Rotate"
+#define qtn_rotate_left "Left"
+#define qtn_rotate_right "Right"
+
+// caption strings for app
+#define qtn_app_caption_string "ImgConvert"
+#define qtn_app_short_caption_string "ImageConverter"
+
+#define qtn_orientation "Orientation"
+
+#define qtn_short_caption "ImageConverter"
+
+
+
+// End of File

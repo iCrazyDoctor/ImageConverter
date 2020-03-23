@@ -1,0 +1,273 @@
+/*
+ * Copyright (c) 2008-2010 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+  ================== CYBERTEC ================ 
+ */
+
+//  RESOURCE IDENTIFIER
+NAME    IMCV // 4 letter ID
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include "imageconverter.hrh"
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <CommonDialogs.hrh> // Enumerations 
+#include <CommonDialogs.rh> // Resource structures
+#include <appinfo.rh>
+#include "ImageConverter.rls"
+
+//  RESOURCE DEFINITIONS 
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf = "ImageConverter"; }
+
+RESOURCE EIK_APP_INFO
+    {
+    hotkeys = r_imageconverter_hotkeys;
+    menubar = r_imageconverter_menubar;
+    status_pane = r_status_pane_empty;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+
+RESOURCE LOCALISABLE_APP_INFO r_localisable_app_info
+    {
+    short_caption = "ImgConvert";
+    caption_and_icon =
+        CAPTION_AND_ICON_INFO 
+            {
+            caption="ImageConverter";
+            //number_of_icons = 1;
+            icon_file = "\\resource\\apps\\ImageConverter.mif";
+            };
+    }
+
+RESOURCE STATUS_PANE_APP_MODEL r_status_pane_empty
+    {
+    layout = R_AVKON_STATUS_PANE_LAYOUT_EMPTY;
+    }
+
+//----------------------------------------------------
+//   
+//    r_imageconverter_hotkeys
+//
+//----------------------------------------------------
+//
+RESOURCE HOTKEYS r_imageconverter_hotkeys
+    {
+    control =
+        {
+        HOTKEY { command = EAknCmdExit; key='e'; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_imageconverter_menubar
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_imageconverter_menubar
+    {
+    titles =
+        {
+        MENU_TITLE { menu_pane = r_imageconverter_menu; txt = "File"; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_imageconverter_menu
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_imageconverter_menu
+    {
+    items =
+        {
+        MENU_ITEM { command = EImageConverterCmdOpen; txt = qtn_openimg;},
+        MENU_ITEM { command = EImageConverterCmdSaveAs; txt = qtn_convert; },
+        MENU_ITEM { command = EImageConverterCmdInfo; txt = qtn_details;},
+     //   MENU_ITEM { command = EImageConverterCmdNext; txt = qtn_next; },
+     //   MENU_ITEM { command = EImageConverterCmdPrev; txt = qtn_previous; },
+     //   MENU_ITEM { command = EImageConverterCmdZoomIn; txt = qtn_zoomin; },
+     //   MENU_ITEM { command = EImageConverterCmdZoomOut; txt = qtn_zoomout; },
+        MENU_ITEM { command = EImageConverterCmdRotate; cascade = r_imageconverter_cascade_rotate; txt = qtn_rotate;}, 
+        MENU_ITEM { command = EImageConverterCmdOrientation; txt = qtn_orient; },
+        MENU_ITEM { command = EImageConverterCmdHelp; txt = qtn_help; },
+        MENU_ITEM { command = EImageConverterCmdAbout; txt = qtn_about;},
+        MENU_ITEM { command = EAknCmdExit; txt = qtn_exit; }
+        };
+    }
+
+RESOURCE MENU_PANE r_imageconverter_cascade_rotate
+    {
+    items = 
+    {
+    MENU_ITEM { command = EImageConverterCmdRotateLeft; txt = qtn_left;},
+    MENU_ITEM { command = EImageConverterCmdRotateRight; txt = qtn_right;}
+    };
+    }
+
+
+RESOURCE DIALOG r_imageconverter_typeselection_dialog
+    {
+    flags = EEikDialogFlagNoDrag | EEikDialogFlagFillAppClientRect |
+            EEikDialogFlagNoTitleBar | EEikDialogFlagNoBorder |
+            EEikDialogFlagCbaButtons | EEikDialogFlagWait | EEikDialogFlagDensePacking;
+    
+    buttons = R_AVKON_SOFTKEYS_OK_BACK;
+    } 
+
+RESOURCE DIALOG r_imageconverter_showinfo_dialog
+	 {
+	    flags = EGeneralQueryFlags ;  //| EEikDialogFlagNoBorder | EEikDialogFlagNoShadow;
+
+	    buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+	    items=
+	        {
+	        DLG_LINE 
+	            {
+	            type = EAknCtPopupHeadingPane;
+	            id = EAknMessageQueryHeaderId;
+	            itemflags = EEikDlgItemNonFocusing;
+	            control = AVKON_HEADING
+	         //   LTEXT bmpfile = "z:\\resource\\apps\\callstatus.mbm" ;
+	                {
+	                };
+	            },
+	        DLG_LINE
+	            {
+	            type = EAknCtMessageQuery;
+	            id = EAknMessageQueryContentId;
+	            control = AVKON_MESSAGE_QUERY
+	            {
+	            };
+	            }
+	            };
+	            }
+
+RESOURCE MEMORYSELECTIONDIALOG r_memory_selection_dialog
+    { 
+    title = "Select location"; 
+    softkey_1 = "OK"; 
+    softkey_2 = "Back"; 
+    locations = 
+        { 
+        LOCATION { root_path = "E:\\"; } 
+        };
+    }
+
+RESOURCE DIALOG R_QUERY_DIALOG
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items=
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control= AVKON_DATA_QUERY 
+                { 
+                layout = EDataLayout;
+                control = EDWIN
+                    { 
+                    flags= EEikEdwinNoHorizScrolling | EEikEdwinResizable; 
+                    maxlength = 10; 
+                    width = 4; 
+                    lines = 1; 
+                    };
+                    };
+                    }
+                    };
+                    }
+
+RESOURCE DIALOG r_about_query_dialog
+    {
+    flags = EGeneralQueryFlags | EEikDialogFlagNoBorder | EEikDialogFlagNoShadow;
+    buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+    items=
+        {
+        DLG_LINE 
+            {
+            type = EAknCtPopupHeadingPane;
+            id = EAknMessageQueryHeaderId;
+            itemflags = EEikDlgItemNonFocusing;
+            control = AVKON_HEADING
+                {
+                };
+            },
+        DLG_LINE
+            {
+            type = EAknCtMessageQuery;
+            id = EAknMessageQueryContentId;
+            control = AVKON_MESSAGE_QUERY
+                {
+                };
+            }
+        };
+    }
+
+RESOURCE DIALOG r_help_query_dialog   // HELP DIALOG
+    {
+    flags = EGeneralQueryFlags | EEikDialogFlagNoBorder | EEikDialogFlagNoShadow;
+    buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+    items=
+        {
+        DLG_LINE 
+            {
+            type = EAknCtPopupHeadingPane;
+            id = EAknMessageQueryHeaderId;
+            itemflags = EEikDlgItemNonFocusing;
+            control = AVKON_HEADING
+                {
+                };
+            },
+        DLG_LINE
+            {
+            type = EAknCtMessageQuery;
+            id = EAknMessageQueryContentId;
+            control = AVKON_MESSAGE_QUERY
+                {
+                };
+            }
+        };
+    }
+
+RESOURCE DIALOG r_selection_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                  //  flags = EAknListBoxSelectionList;
+                    flags =  EAknListBoxMultiselectionList;
+                    height = 5;
+                    width = 7;
+                    };
+                heading = "Select format";
+                };
+            }
+        };
+    }
+
+RESOURCE TBUF32 r_about_dialog_title    { buf=qtn_about_dialog_title; }
+RESOURCE TBUF r_about_dialog_text       { buf=qtn_about_dialog_text; }
+
+RESOURCE TBUF32 r_help_dialog_title    { buf=qtn_help_dialog_title; }
+RESOURCE TBUF r_help_dialog_text       { buf=qtn_help_dialog_text; }
+
+// End of File

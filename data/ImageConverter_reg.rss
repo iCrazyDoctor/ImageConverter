@@ -1,0 +1,20 @@
+/*              ===============COMMENTS LINE===================
+ * Copyright (c) 2008-2010 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+ *    DEVELOPER  CYBERTEC
+ */
+
+#include <appinfo.rh>
+#include <imageconverter.rsg> 
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xE01F5467
+
+RESOURCE APP_REGISTRATION_INFO
+  {
+  app_file="ImageConverter";
+  localisable_resource_file = "\\resource\\apps\\ImageConverter"; 
+  localisable_resource_id = R_LOCALISABLE_APP_INFO;
+  embeddability=KAppNotEmbeddable;
+  newfile=KAppDoesNotSupportNewFile;
+  }
+

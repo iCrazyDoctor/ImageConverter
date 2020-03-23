@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2008-2010 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+ *    ================ CYBERTEC ==================
+ */
+
+#ifndef IMAGECONVERTER_HRH
+#define IMAGECONVERTER_HRH
+
+enum TImageConverterCommandIds
+    {
+    EImageConverterCmdAppTest = 1,
+    EImageConverterCmdOpen,
+    EImageConverterCmdSaveAs,
+    EImageConverterCmdInfo,
+    EImageConverterCmdOrientation,
+    EImageConverterCmdRotate,
+    EImageConverterCmdRotateLeft,
+    EImageConverterCmdRotateRight,
+    EImageConverterCmdZoomIn,
+    EImageConverterCmdZoomOut,
+    EImageConverterCmdHelp,
+    EImageConverterCmdAbout,
+    EImageConverterCmdNext,
+    EImageConverterCmdPrev
+    };
+
+#endif      // IMAGECONVERTER_HRH

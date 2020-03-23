@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE asptml SYSTEM "/epoc32/tools/cshlpcmp/dtd/asptml.dtd">
+<?xml:stylesheet href="/epoc32/tools/cshlpcmp/xsl/asptml.xsl" title="asptml" type="text/xsl"?>
+<asptml>
+<uid value="0x2000e192"/>
+<topic><category>ImageConverter</category><topictitle>General Information</topictitle>
+<synonyms>General Information</synonyms>
+<context contextUID="General_Information"/>
+<index>ImageConverter</index>
+
+<p>
+The application loads automatically all images from the c:\data\images folder.
+</p>
+
+<p>
+The image can be changed with the right and left arrow keys or on the Touch UI, by dragging the image to the left/right.
+</p>
+
+<p>
+The image can be scaled with the up and down arrow keys or on the Touch UI, by dragging up/down.
+</p>
+
+<p>
+The image can be rotated with the 1 and 3 keys or on the Touch UI, by drawing a semi-circle that is open to the left/right, or selecting Options -> Rotate.
+</p>
+
+<p>
+The application automatically follows the orientation of the display. Thus in certain devices you can rotate the application by turning the device to use a different orientation. You can also manually set the fixed orientation for the application by selecting Options -> Change Orientation. However, when the orientation is defined manually, the application keeps that orientation regardless of the display's orientation. The orientation locking is released in application exit.
+</p>
+
+<p>
+An image from any other location can be viewed by selecting Options -> Open. If a memory card is present on the device, a dialog prompting to choose the memory to be used appears. If the memory 
+card is not present, the device memory will be used by default (the contents of the folder C:\Data are shown). If the memory card is selected, the contents of its root folder are shown.
+</p>
+
+<p>
+The properties of the current image can be viewed by selecting Options -> Image Details.
+The image in its current orientation and size can be saved by selecting Options -> Save As. This will trigger a list
+of supported image formats to be shown to the user. Choose the preferred format by
+selecting it from the list and pressing OK. Then you can name the image. 
+</p>
+
+<p>
+Note: The file extension will 
+be appended automatically to the file name according to the selected image format. 
+For example, if you chose the JPEG format and type in a file name "MyImage", the 
+file will be named "MyImage.JPEG".
+</p>
+
+</topic>
+</asptml>

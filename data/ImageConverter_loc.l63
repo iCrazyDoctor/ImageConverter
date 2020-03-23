@@ -1,0 +1,22 @@
+CHARACTER_SET UTF8
+#define qtn_caption_string	"ImgConvert"
+
+#define qtn_openimg		"  Open image"
+#define qtn_convert	      "  Converter"
+#define qtn_details		"  File details"
+                     // #define qtn_next	    "  Next"
+                     // #define qtn_previous	"  Previous"
+                     // #define qtn_zoomin	  "  Zoom in"
+                     // #define qtn_zoomout	  "  Zoom out"
+#define qtn_rotate		"  Rotate"
+#define qtn_orient		"  Change orientation"
+#define qtn_help              "  Help"
+#define qtn_about             "  About"
+#define qtn_exit              "  Exit"
+#define qtn_left	            "  Left"
+#define qtn_right	            "  Right"
+
+#define qtn_about_dialog_text "ImageConverter v.4.3.5 FINAL.\nPublisher: Max Bondarchenko\nDeveloper: CYBERTEC, © 2018\nSource: Nokia / Forum Nokia,\n© 2008-2014 (licensed under GPL)\n\nWeb site links:\nwww.ovi.h1n.ru\ncybertec.ml\n\nChanges from previous v.3.00:\n1) Overall improvements and optimisation by refactoring and recompiling for touch-screen UI.\n2) Added support for localisations.\n3) Default fonts are changed to Georgia and Arial.\n4) Program working directory is set to E:/Images/.\n5) Increased font size and added custom icons, what is more user-friendly on sensor interface.\n\nNote: this software is provided "as is" with no warranty whatsoever, expressed or implied, and moreover WITHOUT any technical support, so DO NOT contact about this, because you WILL NOT receive any reply."
+
+#define qtn_help_dialog_title "Help"
+#define qtn_help_dialog_text "  This program loads automatically all images from E:\Images folder.\n  An image can be changed with the right and left arrow keys or by dragging the image to the left/right on Touch UI.\n  The image can be scaled with the up and down arrow keys or, on Touch UI, by dragging up/down.\n  Images can be rotated with the 1 and 3 keys or by drawing a semi-circle that is open to the left/right (on Touch UI), or selecting Options -> Rotate.\n  The application automatically follows an orientation of the display. Thus in certain devices you can rotate the application by turning the device to use a different orientation. You can also manually set a fixed orientation for the program by selecting Options -> Change orientation. However, when the orientation is defined manually, the application keeps that orientation regardless of the display orientation. The orientation locking is released upon application exit.\n  An image from any other location can be viewed by selecting Options -> Open image. If the contents of E:\Images folder were accidentally deleted, then you will see a persistent white screen and no program elements are being loaded. In order to call the working interface of the program again, one of the possible solutions is to execute any of the above-mentioned image commands on the white screen.\n  The properties of the current image can be viewed by selecting Options -> File details. The image in its current orientation and size can be converted by selecting Options -> Converter. This will trigger a list of supported image formats to be shown to user. Choose a preferred format by selecting it from the list and pressing OK. Then you can name the image."

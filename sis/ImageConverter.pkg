@@ -1,0 +1,35 @@
+;Language - standard language definitions
+&EN, RU
+
+; standard SIS file header
+#{"ImageConverter", "ImageConverter"}, (0xE01F5467), 4, 3, 5, TYPE=SA
+
+;Localised Vendor name
+%{"Max Bondarchenko (En)", "Max Bondarchenko (Ru)"}
+
+;Unique Vendor name
+:"Max << Crazy | Doctor"
+
+;Supports Series 60 v 5.4
+[0x101F7961], 0, 0, 0, {"Series60ProductID", "Series60ProductID"}
+[0x1028315F], 0, 0, 0, {"S60ProductID", "S60ProductID"}
+[0x20022E6D], 0, 0, 0, {"Nokia Belle", "Nokia Belle"}
+
+;Files to install
+"$(EPOCROOT)\Epoc32\release\$(PLATFORM)\$(TARGET)\ImageConverter.exe"-"!:\sys\bin\ImageConverter.exe"
+"$(EPOCROOT)\Epoc32\Data\z\resource\apps\ImageConverter.RSC"-"!:\resource\apps\ImageConverter.RSC"
+"$(EPOCROOT)\Epoc32\Data\z\private\10003a3f\apps\ImageConverter_reg.RSC"-"!:\private\10003a3f\import\apps\ImageConverter_reg.RSC"
+"$(EPOCROOT)\Epoc32\Data\z\resource\apps\ImageConverter.mif"-"!:\resource\apps\ImageConverter.mif"
+"$(EPOCROOT)\Epoc32\Data\z\resource\apps\ImageConverter.R01"-"!:\resource\apps\ImageConverter.R01"
+"$(EPOCROOT)\Epoc32\Data\z\resource\apps\ImageConverter.R16"-"!:\resource\apps\ImageConverter.R16"
+"$(EPOCROOT)\Epoc32\Data\z\resource\apps\ImageConverter.R63"-"!:\resource\apps\ImageConverter.R63"
+;..\help\ImageConverter.hlp"-"!:\resource\help\ImageConverter.hlp"
+
+"..\data\lokki1.jpg"-"E:\Images\lokki1.jpg"
+"..\data\lokki2.jpg"-"E:\Images\lokki2.jpg"
+"..\data\lokki3.jpg"-"E:\Images\lokki3.jpg"
+"..\data\lokki4.jpg"-"E:\Images\lokki4.jpg"
+"..\data\lokki5.jpg"-"E:\Images\lokki5.jpg"
+
+; Backup & Restore
+; "backup_registration.xml"-"!:\private\E01F5467\backup_registration.xml"
